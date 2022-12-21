@@ -14,6 +14,7 @@
 		F505CB7D295321650079AE4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F505CB7B295321650079AE4A /* LaunchScreen.storyboard */; };
 		F505CB89295322AD0079AE4A /* ActionsCVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505CB88295322AD0079AE4A /* ActionsCVController.swift */; };
 		F505CB8B295323A80079AE4A /* ActionCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505CB8A295323A80079AE4A /* ActionCVCell.swift */; };
+		F505CB8F29534EC40079AE4A /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505CB8E29534EC40079AE4A /* ImageVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		F505CB7E295321650079AE4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F505CB88295322AD0079AE4A /* ActionsCVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsCVController.swift; sourceTree = "<group>"; };
 		F505CB8A295323A80079AE4A /* ActionCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCVCell.swift; sourceTree = "<group>"; };
+		F505CB8E29534EC40079AE4A /* ImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			children = (
 				F505CB88295322AD0079AE4A /* ActionsCVController.swift */,
 				F505CB8A295323A80079AE4A /* ActionCVCell.swift */,
+				F505CB8E29534EC40079AE4A /* ImageVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			files = (
 				F505CB8B295323A80079AE4A /* ActionCVCell.swift in Sources */,
 				F505CB89295322AD0079AE4A /* ActionsCVController.swift in Sources */,
+				F505CB8F29534EC40079AE4A /* ImageVC.swift in Sources */,
 				F505CB71295321640079AE4A /* AppDelegate.swift in Sources */,
 				F505CB73295321640079AE4A /* SceneDelegate.swift in Sources */,
 			);

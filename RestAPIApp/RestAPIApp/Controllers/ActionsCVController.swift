@@ -49,6 +49,14 @@ class ActionsCVController: UICollectionViewController {
     }
 
     // MARK: UICollectionViewDelegate
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let userAction = userActions[indexPath.row]
+        switch userAction {
+        case .downloadImage: performSegue(withIdentifier: "DownloadImageSegue", sender: nil)
+        case .users: performSegue(withIdentifier: "UsersSegue", sender: nil)
+        }
+    }
 
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
@@ -82,6 +90,6 @@ class ActionsCVController: UICollectionViewController {
 
 extension ActionsCVController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: (UIScreen.main.bounds.width), height: 80)
+        CGSize(width: (UIScreen.main.bounds.width - 20), height: 80)
     }
 }

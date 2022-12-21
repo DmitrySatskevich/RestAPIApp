@@ -59,8 +59,8 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="lHP-gD-Lgy"/>
                     <connections>
-                        <segue destination="N52-R4-kB3" kind="show" id="qdJ-3T-K0G"/>
-                        <segue destination="DDa-91-eUQ" kind="show" id="fDE-dG-52N"/>
+                        <segue destination="N52-R4-kB3" kind="show" identifier="DownloadImageSegue" id="qdJ-3T-K0G"/>
+                        <segue destination="DDa-91-eUQ" kind="show" identifier="UsersSegue" id="fDE-dG-52N"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BW0-1l-RuP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -96,17 +96,38 @@
             </objects>
             <point key="canvasLocation" x="1458" y="343"/>
         </scene>
-        <!--View Controller-->
+        <!--ImageVC-->
         <scene sceneID="tsD-Mx-k90">
             <objects>
-                <viewController id="N52-R4-kB3" sceneMemberID="viewController">
+                <viewController id="N52-R4-kB3" customClass="ImageVC" customModule="RestAPIApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JW1-us-xfv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="missing-image" translatesAutoresizingMaskIntoConstraints="NO" id="LGB-0j-FPc">
+                                <rect key="frame" x="15" y="107" width="384" height="740"/>
+                                <color key="backgroundColor" red="0.97254908080000002" green="0.97254908080000002" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Gve-AG-kF3">
+                                <rect key="frame" x="197" y="467" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="yTJ-dZ-anr"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.97254908080000002" green="0.97254908080000002" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="yTJ-dZ-anr" firstAttribute="trailing" secondItem="LGB-0j-FPc" secondAttribute="trailing" constant="15" id="Fv6-Rn-IvB"/>
+                            <constraint firstItem="Gve-AG-kF3" firstAttribute="centerX" secondItem="LGB-0j-FPc" secondAttribute="centerX" id="IUK-oc-LGl"/>
+                            <constraint firstItem="Gve-AG-kF3" firstAttribute="centerY" secondItem="LGB-0j-FPc" secondAttribute="centerY" id="Kjz-bU-tiW"/>
+                            <constraint firstItem="LGB-0j-FPc" firstAttribute="leading" secondItem="yTJ-dZ-anr" secondAttribute="leading" constant="15" id="V8m-hL-fIJ"/>
+                            <constraint firstItem="LGB-0j-FPc" firstAttribute="top" secondItem="yTJ-dZ-anr" secondAttribute="top" constant="15" id="agS-ev-fz8"/>
+                            <constraint firstItem="yTJ-dZ-anr" firstAttribute="bottom" secondItem="LGB-0j-FPc" secondAttribute="bottom" constant="15" id="qpG-hu-0EP"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wWB-wb-8dj"/>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="Gve-AG-kF3" id="tVG-br-ku1"/>
+                        <outlet property="image" destination="LGB-0j-FPc" id="Djz-Cb-m0Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nlw-6Y-pjq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -132,6 +153,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="missing-image" width="1920" height="1080"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
