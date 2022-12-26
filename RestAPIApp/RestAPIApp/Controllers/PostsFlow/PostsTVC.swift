@@ -55,7 +55,11 @@ class PostsTVC: UITableViewController {
     // MARK: - Table view delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        performSegue(withIdentifier: "commentsSegue", sender: indexPath)
+        let post = posts[indexPath.row]
+        let storyboard = UIStoryboard(name: "PostFlow", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "CommentsTVC") as! CommentsTVC
+        vc.user = user
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK: - Navigation
@@ -71,18 +75,17 @@ class PostsTVC: UITableViewController {
     }
     
     func fetchPosts() {
-        
-//        guard let userId = user?.id else { return }
-//        let pathUrl = "\(ApiConstants.postsPath)?userId=\(userId)"
-        
-        guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return }
+        guard let userId = user?.id else { return }
+        let pathUrl = "\(ApiConstants.postsPath)?userId=\(userId)"
 
-        let task = URLSession.shared.dataTask(with: url) { (data, _, _) in
+        guard let url = URL(string: pathUrl) else { return }
+
+        let task = URLSession.shared.dataTask(with: url) { data, _, _ in
             guard let data = data else { return }
             do {
                 self.posts = try JSONDecoder().decode([Post].self, from: data)
                 print(self.posts)
-            } catch let error {
+            } catch {
                 print(error)
             }
             DispatchQueue.main.async {

@@ -21,6 +21,7 @@
 		F52C7C2029588E580031D5DE /* PostFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F52C7C1F29588E580031D5DE /* PostFlow.storyboard */; };
 		F52C7C2429588F780031D5DE /* PostsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52C7C2329588F780031D5DE /* PostsTVC.swift */; };
 		F52C7C26295891420031D5DE /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52C7C25295891420031D5DE /* ApiConstants.swift */; };
+		F5480B0A295A19E40028FCDE /* CommentsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5480B09295A19E40028FCDE /* CommentsTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		F52C7C1F29588E580031D5DE /* PostFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostFlow.storyboard; sourceTree = "<group>"; };
 		F52C7C2329588F780031D5DE /* PostsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTVC.swift; sourceTree = "<group>"; };
 		F52C7C25295891420031D5DE /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
+		F5480B09295A19E40028FCDE /* CommentsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				F52C7C2329588F780031D5DE /* PostsTVC.swift */,
+				F5480B09295A19E40028FCDE /* CommentsTVC.swift */,
 			);
 			path = PostsFlow;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				F505CB8B295323A80079AE4A /* ActionCVCell.swift in Sources */,
 				F52C7C26295891420031D5DE /* ApiConstants.swift in Sources */,
 				F505CB89295322AD0079AE4A /* ActionsCVController.swift in Sources */,
+				F5480B0A295A19E40028FCDE /* CommentsTVC.swift in Sources */,
 				F505CB8F29534EC40079AE4A /* ImageVC.swift in Sources */,
 				F52C7C18295876640031D5DE /* Models.swift in Sources */,
 				F505CB71295321640079AE4A /* AppDelegate.swift in Sources */,
