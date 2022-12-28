@@ -9,10 +9,11 @@ import UIKit
 
 class CommentsTVC: UITableViewController {
     
-    var user: User?
+    var postID: Int?
     var comments: [Comment] = []
 
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
         fetchComments()
     }
 
@@ -32,8 +33,8 @@ class CommentsTVC: UITableViewController {
     }
 
     func fetchComments() {
-        guard let userId = user?.id else { return }
-        let pathUrl = "\(ApiConstants.commentsPath)?userId=\(userId)"
+        guard let postID else { return }
+        let pathUrl = "\(ApiConstants.commentsPath)?postId=\(postID)"
 
         guard let url = URL(string: pathUrl) else { return }
 

@@ -39,7 +39,6 @@ class NewPostVC: UIViewController {
             request.httpBody = httpBody
             
             // Create dataTask and post new request
-            
             URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
                 print(response ?? "")
                 if let data = data {
@@ -75,16 +74,16 @@ class NewPostVC: UIViewController {
             AF.request(url,
                        method: .post,
                        parameters: parameters,
-                       encoding: JSONEncoding.default).responseJSON { response in
+                       encoding: JSONEncoding.default).response { response in
                 debugPrint(response)
-                print(response.request)
-                print(response.response)
+                print(response.request ?? "")
+                print(response.response ?? "")
                 debugPrint(response.result)
                 
                 switch response.result {
                 case .success(let data):
-                    print(data)
-                    print(JSON(data))
+                    print(data ?? "")
+                    print(JSON(data ?? ""))
                     self.navigationController?.popViewController(animated: true)
                 case .failure(let error):
                     print(error)
