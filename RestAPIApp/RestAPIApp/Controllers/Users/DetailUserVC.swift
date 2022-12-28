@@ -38,6 +38,7 @@ class DetailUserVC: UIViewController {
     }
     
     @IBAction func todosAction() {
+        
     }
     
     private func setupUI() {
