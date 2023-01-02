@@ -16,7 +16,7 @@ class NetworkService {
     {
         let url = ApiConstants.postsPath + "/" + "\(postID)"
         
-        // уходим в другой поток 
+        // уходим в другой поток
         AF.request(url, method: .delete)
             .response { response in
             
@@ -34,18 +34,18 @@ class NetworkService {
         }
     }
     
-    static func getPhotos(albumID: Int,
-                           callback: @escaping (_ result: [JSON]?, _ error: Error?) -> Void)
-    {
-        let url = ApiConstants.photosPath + "?" + "albumID=\(albumID)"
+    static func getPhotos(albomID: Int,
+                          callback: @escaping (_ result: [JSON]?, _ error: Error?) -> Void) {
+        let url = ApiConstants.photosPath + "?" + "albumId=\(albomID)"
         
         // уходим в другой поток
-        AF.request(url).response { response in
-            
+        AF.request(url).response
+        { response in
             var jsonValue: [JSON]?
             var err: Error?
             
-            switch response.result {
+            switch response.result
+            {
             case .success(let data):
                 guard let data = data else { return }
                 jsonValue = JSON(data).arrayValue

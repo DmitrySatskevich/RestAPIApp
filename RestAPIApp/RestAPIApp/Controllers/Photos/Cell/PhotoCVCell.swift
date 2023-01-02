@@ -31,6 +31,7 @@ final class PhotoCVCell: UICollectionViewCell {
             
             print(response.request)
             print(response.response)
+            debugPrint(response.result)
             
             if case .success(let image) = response.result {
                 print("image dounloaded: \(image)")

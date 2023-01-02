@@ -45,7 +45,7 @@ class PhotosCVC: UICollectionViewController {
         if let album,
            let albumID = album["id"].int {
             
-            NetworkService.getPhotos(albumID: albumID) { [weak self] response, error in
+            NetworkService.getPhotos(albomID: albumID) { [weak self] response, error in
                 guard let photos = response else { return }
                 self?.photos = photos
                 self?.collectionView.reloadData()
