@@ -26,9 +26,7 @@ class ImageVC: UIViewController {
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             
             DispatchQueue.main.async {
-                
                 self.activityIndicatorView.stopAnimating()
-                
                 if let error = error {
                     print(error.localizedDescription)
                     // здесь можно добавить дефолтную картинку или отобразить ошибку (alert)
@@ -37,7 +35,6 @@ class ImageVC: UIViewController {
                 if let response = response {
                     print(response)
                 }
-                
                 print("\n", data ?? "", "\n")
                 
                 if let data = data,

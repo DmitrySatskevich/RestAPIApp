@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 import AlamofireImage
 
-final class PhotoCVCell: UICollectionViewCell {
+class PhotoCVCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
@@ -24,21 +24,12 @@ final class PhotoCVCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
+    // если картинка(объект) не загружается из кэш, тогда грузим из сервера
     private func getThumbnail() {
         guard let thumbnailUrl = thumbnailUrl else { return }
-        AF.request(thumbnailUrl).responseImage { [weak self] response in
-            debugPrint(response)
-            
-            print(response.request)
-            print(response.response)
-            debugPrint(response.result)
-            
-            if case .success(let image) = response.result {
-                print("image dounloaded: \(image)")
-                
-                self?.activityIndicatorView.stopAnimating()
-                self?.imageView.image = image
-            }
+        NetworkService.getPhoto(imageURL: thumbnailUrl) { [weak self]  image, error in
+            self?.activityIndicatorView.stopAnimating()
+            self?.imageView.image = image
         }
     }
 }

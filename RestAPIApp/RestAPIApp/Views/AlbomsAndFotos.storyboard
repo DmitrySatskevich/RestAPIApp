@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--AlbomsTVC-->
+        <!--Alboms-->
         <scene sceneID="ZRb-hu-N2u">
             <objects>
                 <tableViewController storyboardIdentifier="AlbomsTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="P6M-N0-Cf4" customClass="AlbomsTVC" customModule="RestAPIApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -47,6 +47,7 @@
                             <outlet property="delegate" destination="P6M-N0-Cf4" id="L5c-Tm-SdJ"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Alboms" id="rdi-xx-Hlc"/>
                     <connections>
                         <segue destination="5Zi-Yl-DF6" kind="show" identifier="showPhotos" id="1yL-ng-Mqn"/>
                     </connections>
@@ -77,17 +78,17 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="blF-h7-U0F"/>
                     <connections>
-                        <segue destination="vJI-sd-ZZr" kind="show" id="DSh-9Z-iGm"/>
+                        <segue destination="vJI-sd-ZZr" kind="show" identifier="showPhoto" id="DSh-9Z-iGm"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Px-KY-pvq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="396" y="13"/>
         </scene>
-        <!--View Controller-->
+        <!--PhotoVC-->
         <scene sceneID="Eok-Ye-8k9">
             <objects>
-                <viewController id="vJI-sd-ZZr" sceneMemberID="viewController">
+                <viewController id="vJI-sd-ZZr" customClass="PhotoVC" customModule="RestAPIApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LSw-76-y0z">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,7 +96,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tf3-Rp-Z7V">
                                 <rect key="frame" x="0.0" y="59" width="393" height="724"/>
                             </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="eGo-wF-wI9">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="eGo-wF-wI9">
                                 <rect key="frame" x="178" y="373" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
@@ -111,6 +112,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dUi-h9-7TM"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="eGo-wF-wI9" id="R79-wA-Nmz"/>
+                        <outlet property="imageView" destination="Tf3-Rp-Z7V" id="eT2-aQ-Y29"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RXs-fa-vfF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

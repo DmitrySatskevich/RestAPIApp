@@ -15,6 +15,8 @@
 		F505CB89295322AD0079AE4A /* ActionsCVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505CB88295322AD0079AE4A /* ActionsCVController.swift */; };
 		F505CB8B295323A80079AE4A /* ActionCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505CB8A295323A80079AE4A /* ActionCVCell.swift */; };
 		F505CB8F29534EC40079AE4A /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505CB8E29534EC40079AE4A /* ImageVC.swift */; };
+		F50959B12963578A0070B6AF /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50959B02963578A0070B6AF /* CacheManager.swift */; };
+		F50959B329635C960070B6AF /* PhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50959B229635C960070B6AF /* PhotoVC.swift */; };
 		F50D2EB82962EF3900F9FDA7 /* PhotoCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50D2EB62962EF3900F9FDA7 /* PhotoCVCell.swift */; };
 		F50D2EB92962EF3900F9FDA7 /* PhotoCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F50D2EB72962EF3900F9FDA7 /* PhotoCVCell.xib */; };
 		F50DB3E8295CE892008F5AED /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DB3E7295CE892008F5AED /* NetworkService.swift */; };
@@ -45,6 +47,8 @@
 		F505CB88295322AD0079AE4A /* ActionsCVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsCVController.swift; sourceTree = "<group>"; };
 		F505CB8A295323A80079AE4A /* ActionCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCVCell.swift; sourceTree = "<group>"; };
 		F505CB8E29534EC40079AE4A /* ImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
+		F50959B02963578A0070B6AF /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		F50959B229635C960070B6AF /* PhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoVC.swift; sourceTree = "<group>"; };
 		F50D2EB62962EF3900F9FDA7 /* PhotoCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCVCell.swift; sourceTree = "<group>"; };
 		F50D2EB72962EF3900F9FDA7 /* PhotoCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCVCell.xib; sourceTree = "<group>"; };
 		F50DB3E7295CE892008F5AED /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				F50DB3E7295CE892008F5AED /* NetworkService.swift */,
+				F50959B02963578A0070B6AF /* CacheManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -185,8 +190,9 @@
 		F56302672962EBE500036E36 /* Photos */ = {
 			isa = PBXGroup;
 			children = (
-				F56302682962EC6300036E36 /* PhotosCVC.swift */,
 				F563026E2962ECEB00036E36 /* Cell */,
+				F56302682962EC6300036E36 /* PhotosCVC.swift */,
+				F50959B229635C960070B6AF /* PhotoVC.swift */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
@@ -304,6 +310,7 @@
 				F52C7C1C295881C10031D5DE /* DetailUserVC.swift in Sources */,
 				F505CB8B295323A80079AE4A /* ActionCVCell.swift in Sources */,
 				F52C7C26295891420031D5DE /* ApiConstants.swift in Sources */,
+				F50959B12963578A0070B6AF /* CacheManager.swift in Sources */,
 				F505CB89295322AD0079AE4A /* ActionsCVController.swift in Sources */,
 				F5480B0A295A19E40028FCDE /* CommentsTVC.swift in Sources */,
 				F505CB8F29534EC40079AE4A /* ImageVC.swift in Sources */,
@@ -317,6 +324,7 @@
 				F505CB73295321640079AE4A /* SceneDelegate.swift in Sources */,
 				F50DB3ED295CF737008F5AED /* AlbomsTVC.swift in Sources */,
 				F50D2EB82962EF3900F9FDA7 /* PhotoCVCell.swift in Sources */,
+				F50959B329635C960070B6AF /* PhotoVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

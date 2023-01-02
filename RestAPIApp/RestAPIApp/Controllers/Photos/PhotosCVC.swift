@@ -28,8 +28,19 @@ class PhotosCVC: UICollectionViewController {
         UICollectionViewFlowLayout.itemSize = CGSize(width: sizeWH, height: sizeWH)
         collectionView.collectionViewLayout = UICollectionViewFlowLayout
     }
+    
+    func getData() {
+        if let album,
+           let albumID = album["id"].int {
+            NetworkService.getPhotos(albomID: albumID) { [weak self] response, _ in
+                guard let photos = response else { return }
+                self?.photos = photos
+                self?.collectionView.reloadData()
+            }
+        }
+    }
 
-    // MARK: UICollectionViewDataSource
+    // MARK: - UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         photos.count
@@ -41,15 +52,18 @@ class PhotosCVC: UICollectionViewController {
         return cell
     }
     
-    func getData() {
-        if let album,
-           let albumID = album["id"].int {
-            
-            NetworkService.getPhotos(albomID: albumID) { [weak self] response, error in
-                guard let photos = response else { return }
-                self?.photos = photos
-                self?.collectionView.reloadData()
-            }
+    // MARK: - UICollectionViewDelegate
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showPhoto", sender: photos[indexPath.row])
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let photoVC = segue.destination as? PhotoVC,
+           let photo = sender as? JSON {
+            photoVC.photo = photo
         }
     }
 }

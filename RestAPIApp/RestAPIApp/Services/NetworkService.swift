@@ -5,9 +5,10 @@
 //  Created by dzmitry on 29.12.22.
 //
 
-import Foundation
-import Alamofire
+import UIKit
 import SwiftyJSON
+import Alamofire
+import AlamofireImage
 
 class NetworkService {
     
@@ -53,6 +54,21 @@ class NetworkService {
                 err = error
             }
             callback(jsonValue, err)
+        }
+    }
+    
+    static func getPhoto(imageURL: String,
+                        callback: @escaping (_ result: UIImage?, _ error: AFError?) -> Void) {
+        
+        if let image = CacheManager.shared.imageCache.image(withIdentifier: imageURL) {
+            callback(image, nil)
+        } else {
+            AF.request(imageURL).responseImage { response in
+                if case .success(let image) = response.result {
+                    CacheManager.shared.imageCache.add(image, withIdentifier: imageURL)
+                    callback(image, nil)
+                }
+            }
         }
     }
 }
