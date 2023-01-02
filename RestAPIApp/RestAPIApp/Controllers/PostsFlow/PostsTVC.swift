@@ -25,53 +25,48 @@ class PostsTVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        
         let post = posts[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = post.title
         cell.detailTextLabel?.text = post.body
         return cell
     }
 
-    // Override to support conditional editing of the table view.
-//    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
+//     Override to support conditional editing of the table view.
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
 
-    // Override to support editing the table view.
+//    Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete, let id = posts[indexPath.row].id {
-//            NetworkService.deletePost(postID: id) { [weak self] json, error in
-//                if json != nil {
-//                    self?.posts.remove(at: indexPath.row)
-//                    tableView.deleteRows(at: [indexPath], with: .automatic)
-//                } else if let error = error {
-//                    print(error)
-//                }
-//            }
-//        }
+        if editingStyle == .delete, let id = posts[indexPath.row].id {
+            NetworkService.deletePost(postID: id) { [weak self] json, error in
+                if json != nil {
+                    self?.posts.remove(at: indexPath.row)
+                    tableView.deleteRows(at: [indexPath], with: .automatic)
+                } else if let error = error {
+                    print(error)
+                }
+            }
+        }
     }
     
     // MARK: - Table view delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let post = posts[indexPath.row]
-        let storyboard = UIStoryboard(name: "PostFlow", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "CommentsTVC") as! CommentsTVC
-        vc.user = user
-        navigationController?.pushViewController(vc, animated: true)
+        performSegue(withIdentifier: "commentsSegue", sender: indexPath)
     }
     
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let vc = segue.destination as? CommentsTVC,
-//           let indexPath = sender as? IndexPath {
-//            let post = posts[indexPath.row]
-//            vc.postId = post.id
-//        } else if let vc = segue.destination as? NewPostVC {
-//            vc.user = user
-//        }
+        if let vc = segue.destination as? CommentsTVC,
+           let indexPath = sender as? IndexPath {
+            let post = posts[indexPath.row]
+            vc.postID = post.id
+        } else if let vc = segue.destination as? NewPostVC {
+            vc.user = user
+        }
     }
     
     func fetchPosts() {

@@ -31,13 +31,14 @@ class DetailUserVC: UIViewController {
     }
     
     @IBAction func albomsAction() {
-//        let storyboard = UIStoryboard(name: "AlbomsAndFotos", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "AlbomsTVC") as! AlbomsTVC
-//        vc.user = user
-//        navigationController?.pushViewController(vc, animated: true)
+        let storyboard = UIStoryboard(name: "AlbomsAndFotos", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "AlbomsTVC") as! AlbomsTVC
+        vc.user = user
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func todosAction() {
+        
     }
     
     private func setupUI() {
