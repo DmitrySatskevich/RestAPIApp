@@ -12,7 +12,7 @@ import Alamofire
 class AlbomsTVC: UITableViewController {
     
     var user: User!
-    var alboms: [JSON] = []
+    var albums: [JSON] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class AlbomsTVC: UITableViewController {
             switch response.result {
             case .success(let data):
                 guard let data = data else { return }
-                self.alboms = JSON(data).arrayValue
+                self.albums = JSON(data).arrayValue
                 self.tableView.reloadData()
             case .failure(let error):
                 print(error)
@@ -41,25 +41,30 @@ class AlbomsTVC: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        alboms.count
+        albums.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "Cell")
-        cell.textLabel?.text = (alboms[indexPath.row]["id"].int ?? 0).description
-        cell.detailTextLabel?.text = alboms[indexPath.row]["title"].stringValue
+        cell.textLabel?.text = (albums[indexPath.row]["id"].int ?? 0).description
+        cell.detailTextLabel?.text = albums[indexPath.row]["title"].stringValue
         cell.detailTextLabel?.numberOfLines = 0
         return cell
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    // MARK: - Table view delegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let album = albums[indexPath.row]
+        performSegue(withIdentifier: "showPhotos", sender: album)
     }
-    */
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showPhotos",
+           let photoCollectionVC = segue.destination as? PhotosCVC,
+           let album = sender as? JSON {
+            photoCollectionVC.user = user
+            photoCollectionVC.album = album
+        }
+    }
 }

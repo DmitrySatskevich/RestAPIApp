@@ -25,7 +25,30 @@ class NetworkService {
             
             switch response.result {
             case .success(let data):
-                jsonValue = JSON(data ?? "")
+                guard let data = data else { return }
+                jsonValue = JSON(data)
+            case .failure(let error):
+                err = error
+            }
+            callback(jsonValue, err)
+        }
+    }
+    
+    static func getPhotos(albumID: Int,
+                           callback: @escaping (_ result: [JSON]?, _ error: Error?) -> Void)
+    {
+        let url = ApiConstants.photosPath + "?" + "albumID=\(albumID)"
+        
+        // уходим в другой поток
+        AF.request(url).response { response in
+            
+            var jsonValue: [JSON]?
+            var err: Error?
+            
+            switch response.result {
+            case .success(let data):
+                guard let data = data else { return }
+                jsonValue = JSON(data).arrayValue
             case .failure(let error):
                 err = error
             }
