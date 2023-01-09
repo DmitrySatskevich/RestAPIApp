@@ -27,4 +27,7 @@ class ApiConstants {
     // photos
     static let photosPath = serverPath + "photos"
     static let photosPathURL = URL(string: photosPath)
+    
+    static let todosPath = serverPath + "todos"
+    static let todosPathURL = URL(string: todosPath)
 }

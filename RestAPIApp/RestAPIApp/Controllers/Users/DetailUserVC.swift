@@ -38,7 +38,10 @@ class DetailUserVC: UIViewController {
     }
     
     @IBAction func todosAction() {
-        
+        let storyboard = UIStoryboard(name: "ToDoList", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ToDoListTVC") as! ToDoListTVC
+        vc.user = user
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     private func setupUI() {

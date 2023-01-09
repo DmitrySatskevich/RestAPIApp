@@ -30,6 +30,8 @@
 		F52C7C26295891420031D5DE /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52C7C25295891420031D5DE /* ApiConstants.swift */; };
 		F5480B0A295A19E40028FCDE /* CommentsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5480B09295A19E40028FCDE /* CommentsTVC.swift */; };
 		F56302692962EC6300036E36 /* PhotosCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56302682962EC6300036E36 /* PhotosCVC.swift */; };
+		F56C554F2969AA42001B9E38 /* ToDoList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F56C554E2969AA42001B9E38 /* ToDoList.storyboard */; };
+		F56C55522969AAF1001B9E38 /* ToDoListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56C55512969AAF1001B9E38 /* ToDoListTVC.swift */; };
 		F5A65AD8295C259F00351223 /* NewPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A65AD7295C259F00351223 /* NewPostVC.swift */; };
 		F5A65ADB295C7C9800351223 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F5A65ADA295C7C9800351223 /* SwiftyJSON */; };
 		F5A65ADE295C80CB00351223 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F5A65ADD295C80CB00351223 /* Alamofire */; };
@@ -62,6 +64,8 @@
 		F52C7C25295891420031D5DE /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
 		F5480B09295A19E40028FCDE /* CommentsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTVC.swift; sourceTree = "<group>"; };
 		F56302682962EC6300036E36 /* PhotosCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCVC.swift; sourceTree = "<group>"; };
+		F56C554E2969AA42001B9E38 /* ToDoList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToDoList.storyboard; sourceTree = "<group>"; };
+		F56C55512969AAF1001B9E38 /* ToDoListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTVC.swift; sourceTree = "<group>"; };
 		F5A65AD7295C259F00351223 /* NewPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +129,7 @@
 				F505CB76295321640079AE4A /* Main.storyboard */,
 				F52C7C1F29588E580031D5DE /* PostFlow.storyboard */,
 				F50DB3E9295CF359008F5AED /* AlbomsAndFotos.storyboard */,
+				F56C554E2969AA42001B9E38 /* ToDoList.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 				F52C7C2229588F440031D5DE /* PostsFlow */,
 				F50DB3EB295CF6F9008F5AED /* Alboms */,
 				F56302672962EBE500036E36 /* Photos */,
+				F56C55502969AAAC001B9E38 /* ToDoS */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -204,6 +210,14 @@
 				F50D2EB72962EF3900F9FDA7 /* PhotoCVCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		F56C55502969AAAC001B9E38 /* ToDoS */ = {
+			isa = PBXGroup;
+			children = (
+				F56C55512969AAF1001B9E38 /* ToDoListTVC.swift */,
+			);
+			path = ToDoS;
 			sourceTree = "<group>";
 		};
 		F5A65AD5295C24F100351223 /* ImageFlow */ = {
@@ -297,6 +311,7 @@
 				F50D2EB92962EF3900F9FDA7 /* PhotoCVCell.xib in Resources */,
 				F50DB3EA295CF359008F5AED /* AlbomsAndFotos.storyboard in Resources */,
 				F505CB78295321640079AE4A /* Main.storyboard in Resources */,
+				F56C554F2969AA42001B9E38 /* ToDoList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +329,7 @@
 				F505CB89295322AD0079AE4A /* ActionsCVController.swift in Sources */,
 				F5480B0A295A19E40028FCDE /* CommentsTVC.swift in Sources */,
 				F505CB8F29534EC40079AE4A /* ImageVC.swift in Sources */,
+				F56C55522969AAF1001B9E38 /* ToDoListTVC.swift in Sources */,
 				F52C7C18295876640031D5DE /* Models.swift in Sources */,
 				F5A65AD8295C259F00351223 /* NewPostVC.swift in Sources */,
 				F56302692962EC6300036E36 /* PhotosCVC.swift in Sources */,
