@@ -36,6 +36,7 @@
 		F5A65ADB295C7C9800351223 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F5A65ADA295C7C9800351223 /* SwiftyJSON */; };
 		F5A65ADE295C80CB00351223 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F5A65ADD295C80CB00351223 /* Alamofire */; };
 		F5A65AE1295C811800351223 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = F5A65AE0295C811800351223 /* AlamofireImage */; };
+		F5C30EDA296C64BE00869C50 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C30ED9296C64BE00869C50 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		F56C554E2969AA42001B9E38 /* ToDoList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToDoList.storyboard; sourceTree = "<group>"; };
 		F56C55512969AAF1001B9E38 /* ToDoListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTVC.swift; sourceTree = "<group>"; };
 		F5A65AD7295C259F00351223 /* NewPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostVC.swift; sourceTree = "<group>"; };
+		F5C30ED9296C64BE00869C50 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				F50DB3EB295CF6F9008F5AED /* Alboms */,
 				F56302672962EBE500036E36 /* Photos */,
 				F56C55502969AAAC001B9E38 /* ToDoS */,
+				F5C30ED8296C647700869C50 /* Map */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -237,6 +240,14 @@
 			path = ActionFlow;
 			sourceTree = "<group>";
 		};
+		F5C30ED8296C647700869C50 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				F5C30ED9296C64BE00869C50 /* MapViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -325,6 +336,7 @@
 				F52C7C1C295881C10031D5DE /* DetailUserVC.swift in Sources */,
 				F505CB8B295323A80079AE4A /* ActionCVCell.swift in Sources */,
 				F52C7C26295891420031D5DE /* ApiConstants.swift in Sources */,
+				F5C30EDA296C64BE00869C50 /* MapViewController.swift in Sources */,
 				F50959B12963578A0070B6AF /* CacheManager.swift in Sources */,
 				F505CB89295322AD0079AE4A /* ActionsCVController.swift in Sources */,
 				F5480B0A295A19E40028FCDE /* CommentsTVC.swift in Sources */,

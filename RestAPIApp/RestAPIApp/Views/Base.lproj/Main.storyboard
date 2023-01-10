@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -121,7 +122,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="dQS-dT-I4q">
-                                <rect key="frame" x="25" y="98" width="364" height="200.5"/>
+                                <rect key="frame" x="25" y="98" width="364" height="244"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wuF-sP-zm1">
                                         <rect key="frame" x="0.0" y="0.0" width="364" height="26.5"/>
@@ -223,6 +224,26 @@
                                             <constraint firstItem="6cR-ew-nUz" firstAttribute="width" secondItem="qXf-Zk-ZX1" secondAttribute="width" id="pTA-GR-cEz"/>
                                         </constraints>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eny-ua-uJd">
+                                        <rect key="frame" x="0.0" y="217.5" width="364" height="26.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xW1-Ta-Q51">
+                                                <rect key="frame" x="0.0" y="0.0" width="173.5" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WE-5e-Aio">
+                                                <rect key="frame" x="190.5" y="0.0" width="173.5" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="0WE-5e-Aio" firstAttribute="width" secondItem="xW1-Ta-Q51" secondAttribute="width" id="qks-s3-sFR"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="gBA-nt-BeN">
@@ -275,6 +296,7 @@
                     </view>
                     <connections>
                         <outlet property="email" destination="tUT-Br-2iJ" id="7eS-Bt-1Yl"/>
+                        <outlet property="geo" destination="0WE-5e-Aio" id="Ayy-S8-bRX"/>
                         <outlet property="name" destination="8n3-Pp-Uwl" id="adz-A5-sAi"/>
                         <outlet property="phone" destination="gzb-dd-FKQ" id="mJH-wd-AwD"/>
                         <outlet property="username" destination="EiE-jS-enY" id="Zoc-xf-XWG"/>
@@ -284,6 +306,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qAT-Zg-hI8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2208.695652173913" y="342.85714285714283"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="sPb-cr-uHG">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JNU-2B-ciZ" customClass="MapViewController" customModule="RestAPIApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="76F-gz-iOO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y7U-MK-qrz">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xrL-wl-tKT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xrL-wl-tKT" firstAttribute="trailing" secondItem="y7U-MK-qrz" secondAttribute="trailing" id="72Y-78-v67"/>
+                            <constraint firstItem="y7U-MK-qrz" firstAttribute="top" secondItem="76F-gz-iOO" secondAttribute="top" id="KKu-Uy-Gef"/>
+                            <constraint firstItem="y7U-MK-qrz" firstAttribute="leading" secondItem="xrL-wl-tKT" secondAttribute="leading" id="bjw-Z9-l12"/>
+                            <constraint firstItem="xrL-wl-tKT" firstAttribute="bottom" secondItem="y7U-MK-qrz" secondAttribute="bottom" id="slU-Os-Uvr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="y7U-MK-qrz" id="Z3y-wR-div"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AND-z7-yyJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2974" y="343"/>
         </scene>
         <!--ImageVC-->
         <scene sceneID="tsD-Mx-k90">

@@ -16,6 +16,7 @@ class DetailUserVC: UIViewController {
     @IBOutlet private weak var email: UILabel!
     @IBOutlet private weak var phone: UILabel!
     @IBOutlet private weak var website: UILabel!
+    @IBOutlet private weak var geo: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +51,7 @@ class DetailUserVC: UIViewController {
         email.text = user?.email
         phone.text = user?.phone
         website.text = user?.website
+        geo.text = "\(user?.address?.geo?.lat ?? "_") \(user?.address?.geo?.lng ?? "_")"
     }
 
 }
